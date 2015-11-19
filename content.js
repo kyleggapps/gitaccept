@@ -1,4 +1,3 @@
-
 var thumbs = $('img[alt=":+1:"]');
 
 console.log(thumbs);
@@ -13,9 +12,12 @@ $('img[alt=":+1:"]').each(function(){
 });
 
 $('a[href="#accept-box"]').on('click',function(e){
-	e.preventDefault();
-	console.log('clicked');
-$('#new_comment_field').text(':+1:');
-$('.js-new-comment-form').submit();
+  e.preventDefault();
+  console.log('clicked');
+  $('#new_comment_field').text(':+1:');
+  $('.js-new-comment-form').submit();
 });
 
+
+var $search = $("input[aria-label='Search all issues']"), search_value = $search.val(), author = $(".css-truncate-target").text();
+$search.val($search.val().replace("author:"+author, "") + " user:ggapps").parents("form").submit();
